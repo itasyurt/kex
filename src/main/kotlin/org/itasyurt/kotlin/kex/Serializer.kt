@@ -1,4 +1,4 @@
-package org.itasyurt.kotin.kex
+package org.itasyurt.kotlin.kex
 
 import java.util.*
 import kotlin.reflect.KClass
@@ -21,10 +21,10 @@ open abstract class BaseSerializer<T>() {
 
     init {
 
-        val fields = FieldRegistry.get(this::class)
+        val fields = org.itasyurt.kotin.kex.FieldRegistry.get(this::class)
         if (fields.isEmpty()) {
             initFields(fields)
-            FieldRegistry.register(this::class, fields)
+            org.itasyurt.kotin.kex.FieldRegistry.register(this::class, fields)
         }
 
     }
@@ -69,7 +69,7 @@ open abstract class BaseSerializer<T>() {
         val result = HashMap<String, Field>()
         var serializer_types = get_all_types_of(this, BaseSerializer::class).reversed()
         serializer_types.forEach {
-            result.putAll(FieldRegistry.get(it as KClass<BaseSerializer<*>>))
+            result.putAll(org.itasyurt.kotin.kex.FieldRegistry.get(it as KClass<BaseSerializer<*>>))
         }
 
         return result

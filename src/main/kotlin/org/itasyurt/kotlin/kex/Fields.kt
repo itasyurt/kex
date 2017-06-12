@@ -1,4 +1,4 @@
-package org.itasyurt.kotin.kex
+package org.itasyurt.kotlin.kex
 
 import kotlin.reflect.KClass
 import kotlin.reflect.KMutableProperty1

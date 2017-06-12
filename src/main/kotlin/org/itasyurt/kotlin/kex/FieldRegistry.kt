@@ -1,4 +1,4 @@
-package org.itasyurt.kotin.kex
+package org.itasyurt.kotlin.kex
 
 import kotlin.reflect.KClass
 
@@ -6,7 +6,7 @@ import kotlin.reflect.KClass
  * Created by itasyurt on 12/06/2017.
  */
 object FieldRegistry {
-    val serializerFieldsMap = mutableMapOf<KClass<out BaseSerializer <*>>, Map<String, Field>>().withDefault {
+    val serializerFieldsMap = mutableMapOf<KClass<out BaseSerializer<*>>, Map<String, Field>>().withDefault {
         mapOf<String, Field>()
     }
 
