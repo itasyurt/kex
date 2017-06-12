@@ -12,7 +12,7 @@ import kotlin.reflect.full.superclasses
  */
 
 
-open abstract class BaseSerializer<T>() {
+abstract class BaseSerializer<T>() {
 
     val serializedType: KType
         get() = this::class.allSupertypes.find {
@@ -21,14 +21,13 @@ open abstract class BaseSerializer<T>() {
 
     init {
 
-        val fields = org.itasyurt.kotin.kex.FieldRegistry.get(this::class)
+        val fields = FieldRegistry.get(this::class)
         if (fields.isEmpty()) {
             initFields(fields)
-            org.itasyurt.kotin.kex.FieldRegistry.register(this::class, fields)
+            FieldRegistry.register(this::class, fields)
         }
 
     }
-
 
     abstract fun initFields(fields: MutableMap<String, Field>)
 
@@ -62,14 +61,10 @@ open abstract class BaseSerializer<T>() {
 
     private fun getRegisteredFields(): HashMap<String, Field> {
 
-        var currentClass = this.javaClass.kotlin
-
-        val bsc = BaseSerializer::class.java
-
         val result = HashMap<String, Field>()
         var serializer_types = get_all_types_of(this, BaseSerializer::class).reversed()
         serializer_types.forEach {
-            result.putAll(org.itasyurt.kotin.kex.FieldRegistry.get(it as KClass<BaseSerializer<*>>))
+            result.putAll(FieldRegistry.get(it as KClass<BaseSerializer<*>>))
         }
 
         return result

@@ -10,11 +10,11 @@ object FieldRegistry {
         mapOf<String, Field>()
     }
 
-    open fun register(serializer: KClass<out BaseSerializer<*>>, fields: HashMap<String, Field>) {
+    fun register(serializer: KClass<out BaseSerializer<*>>, fields: HashMap<String, Field>) {
         serializerFieldsMap[serializer] = fields
     }
 
-    open fun get(serializer: KClass<out BaseSerializer<*>>): HashMap<String, Field> {
+    fun get(serializer: KClass<out BaseSerializer<*>>): HashMap<String, Field> {
         return HashMap(serializerFieldsMap.getValue(serializer))
     }
 }
