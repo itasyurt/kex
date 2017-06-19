@@ -1,5 +1,6 @@
-package org.itasyurt.kotlin.kex
+package org.itasyurt.kotlin.kex.field
 
+import org.itasyurt.kotlin.kex.serializer.BaseSerializer
 import org.junit.Test
 import org.junit.Assert.assertEquals
 

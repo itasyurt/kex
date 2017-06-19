@@ -1,5 +1,7 @@
-package org.itasyurt.kotlin.kex
+package org.itasyurt.kotlin.kex.serializer
 
+import org.itasyurt.kotlin.kex.field.Field
+import org.itasyurt.kotlin.kex.field.FieldRegistry
 import java.util.*
 import kotlin.reflect.KClass
 import kotlin.reflect.KType

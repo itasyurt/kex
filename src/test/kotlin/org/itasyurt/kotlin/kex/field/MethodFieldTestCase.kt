@@ -1,4 +1,4 @@
-package org.itasyurt.kotlin.kex
+package org.itasyurt.kotlin.kex.field
 
 import org.junit.Assert
 import org.junit.Test

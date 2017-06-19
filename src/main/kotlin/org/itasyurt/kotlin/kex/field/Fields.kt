@@ -1,5 +1,6 @@
-package org.itasyurt.kotlin.kex
+package org.itasyurt.kotlin.kex.field
 
+import org.itasyurt.kotlin.kex.serializer.BaseSerializer
 import kotlin.reflect.KClass
 import kotlin.reflect.KMutableProperty1
 import kotlin.reflect.full.primaryConstructor
